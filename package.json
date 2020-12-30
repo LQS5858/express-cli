@@ -1,0 +1,42 @@
+{
+  "name": "express-cli",
+  "version": "1.0.0",
+  "description": "express+awilix脚手架",
+  "main": "index.js",
+  "scripts": {
+    "compile": "babel src -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npm run compile --watch"
+  },
+  "bin": {
+    "express": "./bin/express-cli"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LQS5858/express-cli.git"
+  },
+  "keywords": [
+    "express",
+    "awilix",
+    "nodejs"
+  ],
+  "author": "ricardo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LQS5858/express-cli/issues"
+  },
+  "homepage": "https://github.com/LQS5858/express-cli#readme",
+  "dependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "chalk": "^4.1.0",
+    "child_process": "^1.0.2",
+    "commander": "^6.2.1",
+    "download-git-repo": "^3.0.2",
+    "ini": "^2.0.0",
+    "inquirer": "^7.3.3",
+    "log-symbols": "^4.0.0",
+    "ora": "^5.1.0"
+  }
+}
