@@ -17,7 +17,7 @@ const downloadTemplate = (gitPath = 'LQS5858/express-12306') => {
   let loading = ora('downloading template ...');
   return new Promise((resolve, reject) => {
     loading.start();
-    download(gitPath, path.resolve(process.cwd(), './template'), err => {
+    download(gitPath, path.resolve(process.cwd()), err => {
       if (err) {
         logger.error(err);
         loading.fail();

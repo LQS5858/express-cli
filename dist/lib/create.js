@@ -33,7 +33,7 @@ inquirer.prompt(questions).then(answer => {
   console.log('--gitpath--', gitPath);
   console.log('env', env);
   downloadTemplate(gitPath).then(() => {
-    const filePath = path.resolve(path.resolve(process.cwd(), './template'), './package.json');
+    const filePath = path.resolve(path.resolve(process.cwd()), './package.json');
     updateJsonFile(filePath, answer);
   });
 });
