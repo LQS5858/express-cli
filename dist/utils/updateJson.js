@@ -20,7 +20,7 @@ const updateJsonFile = (fileName, obj) => {
         json[key] = obj[key];
       }); // 重写模板下的package.json文件
 
-      fs.writeFileSync(file, JSON.stringify(json, null, '\t'), 'utf-8');
+      fs.writeFileSync(fileName, JSON.stringify(json, null, '\t'), 'utf-8');
       resolve();
     }
   });

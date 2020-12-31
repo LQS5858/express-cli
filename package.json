@@ -1,10 +1,10 @@
 {
-  "name": "express-cli",
+  "name": "express-project",
   "version": "1.0.0",
   "description": "express+awilix脚手架",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf dist && cross-env NODE_ENV=development  babel src -d dist",
+    "build": "rimraf dist && cross-env NODE_ENV=development  && babel src -d dist",
     "watch": "npm run build --watch"
   },
   "bin": {
