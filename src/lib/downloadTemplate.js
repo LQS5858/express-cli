@@ -15,7 +15,7 @@ export const downloadTemplate = (gitPath = 'LQS5858/express-12306') => {
             } else {
                 logger.info('模板下载成功')
                 loading.succeed()
-                resove('模板下载成功')
+                resolve('模板下载成功')
             }
         })
     })

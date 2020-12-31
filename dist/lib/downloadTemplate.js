@@ -13,7 +13,7 @@ const logger = require('./logger');
 
 const ora = require('ora');
 
-const downloadTemplate = (gitPath = 'https://github.com:LQS5858/express-12306#master') => {
+const downloadTemplate = (gitPath = 'LQS5858/express-12306') => {
   let loading = ora('downloading template ...');
   return new Promise((resolve, reject) => {
     loading.start();
@@ -25,7 +25,7 @@ const downloadTemplate = (gitPath = 'https://github.com:LQS5858/express-12306#ma
       } else {
         logger.info('模板下载成功');
         loading.succeed();
-        resove('模板下载成功');
+        resolve('模板下载成功');
       }
     });
   });
