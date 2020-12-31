@@ -1,6 +1,6 @@
 {
   "name": "express-awilix-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "express+awilix脚手架",
   "main": "index.js",
   "scripts": {
