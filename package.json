@@ -1,5 +1,5 @@
 {
-  "name": "express-project",
+  "name": "express-awilix-cli",
   "version": "1.0.0",
   "description": "express+awilix脚手架",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "watch": "npm run build --watch"
   },
   "bin": {
-    "express-cli": "./dist/bin/www.js"
+    "express-awilix-cli": "./dist/bin/www.js"
   },
   "repository": {
     "type": "git",
