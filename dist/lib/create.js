@@ -32,8 +32,11 @@ inquirer.prompt(questions).then(answer => {
   logger.info('answer', answer);
   console.log('--gitpath--', gitPath);
   console.log('env', env);
-  downloadTemplate(gitPath).then(() => {
-    const filePath = path.resolve(path.resolve(process.cwd()), './package.json');
+  const {
+    name
+  } = answer || {};
+  downloadTemplate(gitPath, name).then(() => {
+    const filePath = path.resolve(path.resolve(process.cwd()), `./${name}/package.json`);
     updateJsonFile(filePath, answer);
   });
 });

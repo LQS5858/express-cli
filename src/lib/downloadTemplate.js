@@ -3,11 +3,11 @@ const path = require('path')
 const logger = require('./logger')
 const ora = require('ora')
 
-export const downloadTemplate = (gitPath = 'LQS5858/express-12306') => {
+export const downloadTemplate = (gitPath = 'LQS5858/express-12306', name = 'express-cli') => {
     let loading = ora('downloading template ...');
     return new Promise((resolve, reject) => {
         loading.start()
-        download(gitPath, path.resolve(process.cwd()), err => {
+        download(gitPath, path.resolve(process.cwd(), `./${name}`), err => {
             if (err) {
                 logger.error(err)
                 loading.fail()
