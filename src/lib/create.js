@@ -24,7 +24,7 @@ inquirer.prompt(questions).then(answer => {
     console.log('env', env);
     const { name } = answer || {}
     downloadTemplate(gitPath, name).then(() => {
-        const filePath = path.resolve(path.resolve(process.cwd()), `./${name}/package.json`)
+        const filePath = path.resolve(process.cwd(), `./${name}/package.json`)
         updateJsonFile(filePath, answer)
     })
 })
