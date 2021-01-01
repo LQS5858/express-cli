@@ -1,5 +1,10 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.create = void 0;
+
 const inquirer = require('inquirer');
 
 const {
@@ -18,25 +23,28 @@ const {
   updateJsonFile
 } = require('../utils/updateJson');
 
-const env = process.env.NODE_ENV;
-const questions = [{
-  name: 'name',
-  message: 'project name',
-  default: 'express-project'
-}, {
-  name: 'version',
-  message: '项目版本号',
-  default: '1.0.0'
-}];
-inquirer.prompt(questions).then(answer => {
-  logger.info('answer', answer);
-  console.log('--gitpath--', gitPath);
-  console.log('env', env);
-  const {
-    name
-  } = answer || {};
-  downloadTemplate(gitPath, name).then(() => {
-    const filePath = path.resolve(process.cwd(), `./${name}/package.json`);
-    updateJsonFile(filePath, answer);
+const create = proName => {
+  const env = process.env.NODE_ENV;
+  const questions = [{
+    name: 'name',
+    message: 'project name',
+    default: proName ? proName : 'express-project'
+  }, {
+    name: 'version',
+    message: '项目版本号',
+    default: '1.0.0'
+  }];
+  inquirer.prompt(questions).then(answer => {
+    logger.info('answer', answer);
+    console.log('env', env);
+    let {
+      name
+    } = answer || {};
+    downloadTemplate(gitPath, name).then(() => {
+      const filePath = path.resolve(process.cwd(), `./${name}/package.json`);
+      updateJsonFile(filePath, answer);
+    });
   });
-});
+};
+
+exports.create = create;
