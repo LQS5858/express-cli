@@ -3,7 +3,7 @@ const path = require('path')
 const logger = require('./logger')
 const ora = require('ora')
 
-export const downloadTemplate = (gitPath = 'LQS5858/express-12306', name = 'express-cli') => {
+export const downloadTemplate = (gitPath = 'LQS5858/express-awilix-templates', name = 'express-cli') => {
     let loading = ora('downloading template ...');
     return new Promise((resolve, reject) => {
         loading.start()

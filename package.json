@@ -4,12 +4,15 @@
   "description": "express+awilix脚手架",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf dist && cross-env NODE_ENV=development  && babel src -d dist",
+    "build": "rimraf dist && cross-env NODE_ENV=production  && babel src --out-dir dist",
     "watch": "npm run build --watch"
   },
   "bin": {
-    "express-awilix-cli": "./dist/bin/www.js"
+    "express-awilix-cli": "dist/bin/www.js"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LQS5858/express-cli.git"
@@ -26,9 +29,6 @@
   },
   "homepage": "https://github.com/LQS5858/express-cli#readme",
   "dependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
     "chalk": "^4.1.0",
     "child_process": "^1.0.2",
     "commander": "^6.2.1",
@@ -39,5 +39,13 @@
     "log-symbols": "^4.0.0",
     "ora": "^5.1.0",
     "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2"
+  },
+  "engines": {
+    "node": "12.16.0"
   }
 }

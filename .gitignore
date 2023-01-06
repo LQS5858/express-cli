@@ -9,3 +9,5 @@ log
 node_modules
 template
 express-project
+dist
+
