@@ -4,11 +4,11 @@ const { version } = require('../../package.json')
 const { create } = require('../lib/create')
 program
     .usage('<command> [options]')
-    .version(version, '-v,--version')
+    .version(version)
     .command('create')
     .description('A simple CLI for building initialize project include Wechat applet, Vue, Egg (nodejs)')
     .action((name, cmd) => {
-        const _name = cmd?.[1]
+        const _name = cmd?.args?.[1]
         create(_name)
     })
     .parse(process.argv)
